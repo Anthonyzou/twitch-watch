@@ -1,5 +1,5 @@
 
-#!/usr/bin/env node
+// #!/usr/bin/env node
 
 const Nightmare = require('nightmare');
 
@@ -26,13 +26,13 @@ rp('http://gimmeproxy.com/api/getProxy')
       plugins: true
     },
     switches : {
-      'ppapi-flash-path': './libpepflashplayer.so',
+      'ppapi-flash-path': './PepperFlashPlayer.plugin',
       'proxy-server': result.ipPort,
     }
   });
   const page = nightmare
     .useragent(_.sample(ua))
-    .goto('http://www.twitch.tv/malothekilla')
+    .goto('https://www.twitch.tv/malothekilla')
     .on('page', console.log.bind(console))
 
     .run((err, nightmare) => {
