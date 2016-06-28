@@ -34,7 +34,7 @@ const run = () => {
       .run((err, nightmare) => {
         if (err) {
           console.error("err", err);
-          nightmare.end();
+          page.end();
           run();
         }
       });
