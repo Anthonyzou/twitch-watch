@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "nightmare": "^2.5.2",
-    "random-useragent": "^0.3.0",
     "request-promise": "^3.0.0"
   }
 }

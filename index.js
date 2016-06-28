@@ -1,10 +1,6 @@
 
 const Nightmare = require('nightmare');
-
-const _ = require('lodash');
 const rp = require('request-promise');
-const random_useragent = require('random-useragent');
-
 
 const run = () => {
   rp('http://gimmeproxy.com/api/getProxy', {
@@ -16,7 +12,8 @@ const run = () => {
   })
   .then(result => {
 
-    result = JSON.parse(result)
+    result = JSON.parse(result);
+
     const proxy = `${result.type}://${result.ipPort}`;
     const nightmare = Nightmare({
       show: true,
@@ -29,18 +26,18 @@ const run = () => {
         'ignore-certificate-errors': true
       }
     });
-    const page = nightmare
-    .useragent(random_useragent.getRandom())
-    .goto('http://www.twitch.tv/jbozzz')
-    .on('page', console.log.bind(console))
 
-    .run((err, nightmare) => {
-      if (err) {
-        console.error("err", err);
-        page.end();
-        run();
-      }
-    });
+    const page = nightmare
+      .goto('http://www.twitch.tv/jbozzz')
+      .on('page', console.log.bind(console))
+
+      .run((err, nightmare) => {
+        if (err) {
+          console.error("err", err);
+          nightmare.end();
+          run();
+        }
+      });
 
   });
 }
