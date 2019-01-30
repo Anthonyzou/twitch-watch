@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nightmare": "^2.5.2",
-    "request-promise": "^3.0.0"
+    "axios": "0.18.0",
+    "nightmare": "^2.5.2"
   }
 }
