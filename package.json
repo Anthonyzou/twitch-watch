@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.18.0",
-    "nightmare": "^2.5.2"
+    "axios": "0.19.0",
+    "nightmare": "^3.0.2"
   }
 }

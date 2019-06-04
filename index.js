@@ -28,9 +28,8 @@ const run = async () => {
   });
 
   const page = nightmare
-    .goto('http://www.twitch.tv/jbozzz')
-    .on('page', console.log.bind(console))
-
+    .goto('https://www.twitch.tv/runescape')
+    .on('page', console.log)
     .run((err, nightmare) => {
       if (err) {
         console.error('err', err);
